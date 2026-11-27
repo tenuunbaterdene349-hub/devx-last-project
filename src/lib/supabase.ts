@@ -1,15 +1,14 @@
 import { createClient } from "@supabase/supabase-js";
 
-const rawUrl = (process.env.NEXT_PUBLIC_SUPABASE_URL ?? "").trim();
+const supabaseUrl = (
+  process.env.NEXT_PUBLIC_SUPABASE_URL ||
+  "https://xhrobyrxirikddzjhacw.supabase.co"
+).trim();
+
 const supabaseKey = (
   process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ||
   process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
-  ""
+  "sb_publishable_ydMKw_5m9TBpzyFPOKmtbg_UG_JdgaV"
 ).trim();
 
-const isValidHttpUrl = /^https?:\/\/.+/.test(rawUrl);
-const supabaseUrl = isValidHttpUrl
-  ? rawUrl
-  : "https://placeholder.supabase.co";
-
-export const supabase = createClient(supabaseUrl, supabaseKey || "placeholder-key");
+export const supabase = createClient(supabaseUrl, supabaseKey);
