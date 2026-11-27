@@ -13,9 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bug Autopsy Lab | Smart Study & Mistake Tracker",
-  description:
-    "Paste broken code, understand what went wrong, and master how to fix it.",
+  title: "Bug Autopsy Lab — Code Mistake Analyzer",
+  description: "Inspect broken code, diagnose root causes, and master fixes.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
